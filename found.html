@@ -1,24 +1,24 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>I Found a Vehicle – GoSaSh Logistics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
 
-<header>
+<header class="animated-nav">
   <div class="navwrap">
     <div class="logo-group">
-      <img src="logo.png">
+      <img src="logo.png" alt="">
       <div class="logo-text">
         <span>GOSASH LOGISTICS</span>
         <span>Vehicle You Found</span>
       </div>
     </div>
-
     <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
@@ -26,90 +26,76 @@
       <a href="transport.html">Transport</a>
       <a href="export.html">Export Docs</a>
       <a href="request.html">Find Vehicle</a>
+      <a class="active" href="found.html">I Found a Vehicle</a>
       <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
     </nav>
-
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
 <section>
   <h2>I Already Found a Vehicle</h2>
-
   <p class="section-intro">
-    Share the vehicle link or address. We will quote inspection, pickup, transport, and paperwork support.
+    Share the vehicle details. We’ll quote inspection, transport and paperwork support.
   </p>
 
   <div class="form-card">
     <form method="POST" action="mailto:gxpdeliver@gmail.com" enctype="text/plain">
-
       <div class="form-grid">
-
         <div>
           <label>Your Name</label>
           <input name="Name" required>
         </div>
-
         <div>
           <label>Email</label>
           <input type="email" name="Email" required>
         </div>
-
         <div>
           <label>WhatsApp / Phone</label>
           <input name="Phone">
         </div>
-
         <div>
           <label>Destination Country / Port</label>
           <input name="Port">
         </div>
-
         <div style="grid-column:1/-1;">
           <label>Vehicle Link or Address</label>
           <input name="Vehicle Link" required
-                 placeholder="Auction link, dealer listing, FB Marketplace post, or physical address">
+                 placeholder="Auction link, dealer listing, FB Marketplace post, or full address">
         </div>
-
         <div>
           <label>Year / Make / Model</label>
           <input name="YMM">
         </div>
-
         <div>
           <label>Advert Price (USD)</label>
           <input name="Price">
         </div>
-
         <div>
           <label>Condition</label>
           <input name="Condition" placeholder="Running, non-running, salvage, etc.">
         </div>
-
         <div style="grid-column:1/-1;">
           <label>Notes</label>
-          <textarea name="Notes" placeholder="Seller details, timing, auction closing time, etc."></textarea>
+          <textarea name="Notes" placeholder="Seller details, auction closing time, special instructions, etc."></textarea>
         </div>
-
       </div>
-
       <br>
-      <button class="btn btn-primary" type="submit">Submit Vehicle Details</button>
-
+      <button class="btn brand" type="submit">Submit Vehicle Details</button>
     </form>
   </div>
 </section>
 
 <footer>
-  © 2025 GoSaSh Logistics – Vehicle Intake Form
+  © 2025 GoSaSh Logistics – Vehicle Intake
 </footer>
 
-<a class="floating-wa" target="_blank"
-   href="https://wa.me/13369911284?text=Hello%2C%20I%20need%20help%20with%20a%20vehicle%20I%20found.">
-  <img src="wa.png">
+<a href="https://wa.me/13369911284?text=Hi%2C%20I%20need%20help%20with%20a%20vehicle%20I%20found."
+   class="floating-wa" target="_blank">
+  <img src="wa.png" alt="">
 </a>
 
 <script src="script.js"></script>
-
 </body>
 </html>
