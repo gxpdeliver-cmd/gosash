@@ -1,34 +1,35 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Vehicle Transport – GoSaSh Logistics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
 
-<header>
+<header class="animated-nav">
   <div class="navwrap">
     <div class="logo-group">
-      <img src="logo.png">
+      <img src="logo.png" alt="">
       <div class="logo-text">
         <span>GOSASH LOGISTICS</span>
-        <span>U.S. Vehicle Transport Services</span>
+        <span>Vehicle Transport</span>
       </div>
     </div>
-
     <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="inspections.html">Inspection</a>
-      <a href="transport.html">Transport</a>
+      <a class="active" href="transport.html">Transport</a>
       <a href="export.html">Export Docs</a>
       <a href="request.html">Find Vehicle</a>
+      <a href="found.html">I Found a Vehicle</a>
       <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
     </nav>
-
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
@@ -36,42 +37,39 @@
 <section>
   <h2>Vehicle Transport</h2>
   <p class="section-intro">
-    From dealership pickup to cross-country hauls and final port delivery — GoSaSh ensures safe and reliable transport.
+    We coordinate carriers to move vehicles from U.S. sellers, auctions or dealers to the port or warehouse.
   </p>
 
   <div class="grid">
     <div class="card">
       <h3>Dealer Pickup</h3>
-      <p>We coordinate with dealers, verify paperwork, and document the vehicle before loading.</p>
+      <p>We schedule pickup, document the unit and confirm loading with photos.</p>
     </div>
-
     <div class="card">
       <h3>Auction Pickup</h3>
-      <p>Copart, IAAI, Manheim — we collect vehicles and transport them securely.</p>
+      <p>Copart, IAAI, Manheim and others — we handle release and transport.</p>
     </div>
-
     <div class="card">
-      <h3>Long-Distance Transport</h3>
-      <p>Open or enclosed carriers available nationwide.</p>
+      <h3>Long-distance Routes</h3>
+      <p>Open or enclosed carriers, depending on value and client preference.</p>
     </div>
-
     <div class="card">
-      <h3>Port Delivery</h3>
-      <p>Delivered to your freight forwarder or port lot with photos upon arrival.</p>
+      <h3>Direct Port Delivery</h3>
+      <p>Delivery to your freight forwarder’s yard or port lot with proof of delivery.</p>
     </div>
   </div>
 
   <br><br>
-  <a class="btn btn-primary" href="found.html">Book Transport →</a>
+  <a class="btn btn-primary" href="found.html">Request Transport →</a>
 </section>
 
 <footer>
   © 2025 GoSaSh Logistics – Vehicle Transport
 </footer>
 
-<a class="floating-wa" target="_blank"
-   href="https://wa.me/13369911284?text=Hello%2C%20I%20need%20transport%20service.">
-  <img src="wa.png">
+<a href="https://wa.me/13369911284?text=Hi%2C%20I%20need%20transport%20for%20a%20vehicle."
+   class="floating-wa" target="_blank">
+  <img src="wa.png" alt="">
 </a>
 
 <script src="script.js"></script>
