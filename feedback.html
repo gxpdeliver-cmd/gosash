@@ -1,52 +1,73 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GoSaSh — Feedback</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <title>Feedback – GoSaSh Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
 
-<header class="topnav">
-  <img src="logo.png" class="nav-logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="found.html">I Found a Vehicle</a>
-    <a href="request.html">Find Me a Vehicle</a>
-    <a href="contact.html">Contact</a>
-    <a class="active" href="feedback.html">Feedback</a>
-  </nav>
+<header class="animated-nav">
+  <div class="navwrap">
+    <div class="logo-group">
+      <img src="logo.png" alt="">
+      <div class="logo-text">
+        <span>GOSASH LOGISTICS</span>
+        <span>Comments & Suggestions</span>
+      </div>
+    </div>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="inspections.html">Inspection</a>
+      <a href="transport.html">Transport</a>
+      <a href="export.html">Export Docs</a>
+      <a href="request.html">Find Vehicle</a>
+      <a href="found.html">I Found a Vehicle</a>
+      <a href="contact.html">Contact</a>
+      <a class="active" href="feedback.html">Feedback</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
 </header>
 
-<section class="page-section">
+<section>
   <h2>Comments, Suggestions & Requests</h2>
-  <p class="section-desc">
-    Share your ideas, suggestions, or service improvement requests.
+  <p class="section-intro">
+    Help us improve GoSaSh. Share your feedback, ideas and service requests below.
   </p>
 
   <div class="form-card">
-    <form name="Feedback Form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="Feedback Form">
-
+    <form method="POST" action="mailto:gxpdeliver@gmail.com" enctype="text/plain">
       <label>Your Name</label>
-      <input type="text" name="name" required>
+      <input name="Name" required>
 
       <label>Email (optional)</label>
-      <input type="email" name="email">
+      <input type="email" name="Email">
 
-      <label>Phone (optional)</label>
-      <input name="phone">
+      <label>Phone / WhatsApp (optional)</label>
+      <input name="Phone">
 
       <label>Your Message</label>
-      <textarea name="message" required></textarea>
+      <textarea name="Message" required placeholder="Comments, suggestions or requests..."></textarea>
 
+      <br>
       <button class="btn brand" type="submit">Submit Feedback</button>
     </form>
   </div>
 </section>
+
+<footer>
+  © 2025 GoSaSh Logistics – Feedback
+</footer>
+
+<a href="https://wa.me/13369911284?text=Hi%2C%20I%20have%20feedback%20for%20GoSaSh."
+   class="floating-wa" target="_blank">
+  <img src="wa.png" alt="">
+</a>
 
 <script src="script.js"></script>
 </body>
