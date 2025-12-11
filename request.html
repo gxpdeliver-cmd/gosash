@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Find a Vehicle – GoSaSh Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="navwrap">
+    <div class="logo-group">
+      <img src="logo.png">
+      <div class="logo-text">
+        <span>GOSASH LOGISTICS</span>
+        <span>Find a U.S. Vehicle</span>
+      </div>
+    </div>
+
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="inspections.html">Inspection</a>
+      <a href="transport.html">Transport</a>
+      <a href="export.html">Export Docs</a>
+      <a href="request.html">Find Vehicle</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<section>
+  <h2>Find Me a Vehicle</h2>
+  <p class="section-intro">
+    Tell us what kind of vehicle you're looking for and your destination port.
+    We help locate matching options from trusted U.S. sellers.
+  </p>
+
+  <div class="form-card">
+    <form method="POST" action="mailto:gxpdeliver@gmail.com" enctype="text/plain">
+
+      <div class="form-grid">
+        <div>
+          <label>Your Name</label>
+          <input name="Name" required>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input type="email" name="Email" required>
+        </div>
+
+        <div>
+          <label>WhatsApp / Phone</label>
+          <input name="Phone">
+        </div>
+
+        <div>
+          <label>Destination Country / Port</label>
+          <input name="Port">
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label>Vehicle Details You Want</label>
+          <input name="Target Vehicle" placeholder="Example: Toyota Land Cruiser 2018+, Audi Q7, F-150 Lariat, Honda Fit, etc.">
+        </div>
+
+        <div>
+          <label>Budget (USD)</label>
+          <input name="Budget">
+        </div>
+
+        <div>
+          <label>Timeframe</label>
+          <input name="Timeline" placeholder="How soon do you need it?">
+        </div>
+
+        <div style="grid-column:1/-1;">
+          <label>Notes</label>
+          <textarea name="Notes" placeholder="Preferred mileage, color, options, condition, etc."></textarea>
+        </div>
+      </div>
+
+      <br>
+      <button class="btn btn-primary" type="submit">Submit Request</button>
+
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 GoSaSh Logistics – Vehicle Sourcing
+</footer>
+
+<a class="floating-wa" target="_blank"
+   href="https://wa.me/13369911284?text=Hello%2C%20I%20want%20help%20finding%20a%20vehicle.">
+  <img src="wa.png">
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
