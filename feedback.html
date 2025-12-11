@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoSaSh — Feedback</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+<header class="topnav">
+  <img src="logo.png" class="nav-logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="found.html">I Found a Vehicle</a>
+    <a href="request.html">Find Me a Vehicle</a>
+    <a href="contact.html">Contact</a>
+    <a class="active" href="feedback.html">Feedback</a>
+  </nav>
+</header>
+
+<section class="page-section">
+  <h2>Comments, Suggestions & Requests</h2>
+  <p class="section-desc">
+    Share your ideas, suggestions, or service improvement requests.
+  </p>
+
+  <div class="form-card">
+    <form name="Feedback Form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="Feedback Form">
+
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email (optional)</label>
+      <input type="email" name="email">
+
+      <label>Phone (optional)</label>
+      <input name="phone">
+
+      <label>Your Message</label>
+      <textarea name="message" required></textarea>
+
+      <button class="btn brand" type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
