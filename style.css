@@ -1,14 +1,12 @@
-/* ======================================================
-   GLOBAL COLORS & RESET
-====================================================== */
+/* ================================
+   GLOBAL
+================================ */
 :root {
   --ink:#1a1a1a;
   --bg:#ffffff;
   --muted:#f3f6fa;
-  --brand:#0d3c61;         /* Navy */
-  --accent:#00a7b5;        /* Teal */
-  --accent-soft:#e0f6f8;
-  --accent-warm:#ffb25c;
+  --brand:#0d3c61;    /* Navy */
+  --accent:#00a7b5;   /* Teal */
   --overlay:rgba(0,0,0,.45);
   --nav-overlay:rgba(13,60,97,.96);
 }
@@ -22,8 +20,8 @@ body {
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
-  overflow-x:hidden !important;
   color:var(--ink);
+  overflow-x:hidden !important;
 }
 
 a {
@@ -31,39 +29,48 @@ a {
   color:inherit;
 }
 
-/* ======================================================
-   HEADER & NAVIGATION
-====================================================== */
+/* ================================
+   HEADER & NAV
+================================ */
 header {
   background:var(--brand);
   color:#fff;
-  padding:12px 0;
+  padding:10px 0;
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 2px 4px rgba(0,0,0,.12);
+  box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+
+/* slide-down animation */
+header.animated-nav {
+  animation:navSlide .5s ease-out;
+}
+@keyframes navSlide {
+  from { transform:translateY(-40px); opacity:0; }
+  to   { transform:translateY(0); opacity:1; }
 }
 
 .navwrap {
   max-width:1120px;
   margin:auto;
-  padding:0 20px;
+  padding:0 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  flex-wrap:wrap;
+  gap:10px;
 }
 
 .logo-group {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 
 .logo-group img {
-  height:46px;
-  background:#fff;
+  height:44px;
   border-radius:50%;
+  background:#fff;
   padding:4px 6px;
   box-shadow:0 0 10px rgba(255,255,255,.7);
 }
@@ -73,15 +80,14 @@ header {
   font-size:14px;
   letter-spacing:.04em;
 }
-
 .logo-text span:last-child {
   font-size:11px;
-  opacity:.8;
+  opacity:.85;
 }
 
 nav {
   display:flex;
-  gap:18px;
+  gap:16px;
   font-size:14px;
   font-weight:600;
 }
@@ -91,36 +97,35 @@ nav a {
   padding-bottom:3px;
   color:#eaf4ff;
 }
-
 nav a::after {
   content:"";
   position:absolute;
-  bottom:0;
   left:0;
+  bottom:0;
   width:0;
   height:2px;
   background:var(--accent);
   transition:width .25s ease;
 }
-
-nav a:hover::after {
+nav a:hover::after,
+nav a.active::after {
   width:100%;
 }
 
 .hamburger {
   display:none;
-  font-size:28px;
+  font-size:26px;
   cursor:pointer;
   color:#fff;
 }
 
-/* ======================================================
-   HERO SECTION
-====================================================== */
+/* ================================
+   HERO (HOME PAGE)
+================================ */
 .hero {
   max-width:1120px;
-  margin:26px auto;
-  padding:70px 22px;
+  margin:24px auto 32px;
+  padding:60px 22px;
   background:
     linear-gradient(135deg,rgba(13,60,97,.92),rgba(0,167,181,.85)),
     url('hero.jpg') center/cover no-repeat;
@@ -129,14 +134,13 @@ nav a:hover::after {
 }
 
 .hero h1 {
+  margin:0 0 10px;
   font-size:34px;
-  margin:0 0 8px;
 }
-
 .hero .subtitle {
+  margin:0 0 18px;
   font-size:15px;
-  margin:0 0 16px;
-  opacity:.95;
+  opacity:.96;
 }
 
 .hero-badges {
@@ -145,10 +149,9 @@ nav a:hover::after {
   gap:8px;
   margin-bottom:20px;
 }
-
 .badge {
-  background:rgba(255,255,255,.12);
-  padding:8px 12px;
+  background:rgba(255,255,255,.18);
+  padding:7px 11px;
   border-radius:999px;
   font-size:13px;
 }
@@ -156,30 +159,12 @@ nav a:hover::after {
 .hero-buttons {
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
+  gap:12px;
 }
 
-.btn {
-  padding:12px 20px;
-  border-radius:999px;
-  font-weight:700;
-  cursor:pointer;
-  border:none;
-}
-
-.btn-primary {
-  background:#fff;
-  color:var(--brand);
-}
-
-.btn-secondary {
-  background:rgba(0,0,0,.25);
-  color:#fff;
-}
-
-/* ======================================================
-   SECTIONS / GRIDS / CARDS
-====================================================== */
+/* ================================
+   SECTIONS
+================================ */
 section {
   max-width:1120px;
   margin:40px auto;
@@ -188,18 +173,22 @@ section {
 
 h2 {
   text-align:center;
-  margin-bottom:10px;
+  margin:0 0 10px;
   font-size:26px;
 }
 
-.section-intro {
+.section-intro,
+.section-desc {
   text-align:center;
   max-width:680px;
-  margin:0 auto 26px;
+  margin:0 auto 24px;
   color:#4b5563;
   font-size:14px;
 }
 
+/* ================================
+   GRID & CARDS
+================================ */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -208,96 +197,118 @@ h2 {
 
 .card {
   background:#fff;
+  border-radius:18px;
   border:1px solid #e4edf5;
   padding:22px 20px;
-  border-radius:18px;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  box-shadow:0 3px 8px rgba(0,0,0,.08);
   transition:.25s ease;
 }
-
 .card:hover {
   transform:translateY(-4px);
-  box-shadow:0 12px 20px rgba(0,0,0,.12);
+  box-shadow:0 10px 18px rgba(0,0,0,.12);
+}
+.card img {
+  height:50px;
+  margin-bottom:8px;
 }
 
-/* ======================================================
+/* ================================
+   BUTTONS
+================================ */
+.btn {
+  border:none;
+  border-radius:999px;
+  padding:11px 18px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:14px;
+}
+.btn-primary {
+  background:#fff;
+  color:var(--brand);
+}
+.btn-secondary {
+  background:rgba(0,0,0,.25);
+  color:#fff;
+}
+.btn.brand {
+  background:var(--accent);
+  color:#fff;
+}
+
+/* ================================
    FORMS
-====================================================== */
+================================ */
 .form-card {
   background:#fff;
-  padding:26px;
   border-radius:20px;
   border:1px solid #e4edf5;
+  padding:24px 20px;
   box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
 .form-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  gap:18px;
 }
 
 label {
   font-weight:700;
+  font-size:13px;
   margin-bottom:4px;
   display:block;
 }
 
 input,textarea {
   width:100%;
-  padding:12px;
+  padding:11px;
   border-radius:10px;
   border:1px solid #d7dee7;
   font-size:14px;
 }
-
 textarea {
   min-height:110px;
+  resize:vertical;
 }
 
-/* ======================================================
+/* ================================
    CONTACT BOX
-====================================================== */
+================================ */
 .contact-box {
   background:var(--muted);
-  padding:44px 20px;
   border-radius:24px;
+  padding:36px 20px;
 }
-
 .contact-box .cta {
   display:flex;
-  gap:14px;
+  flex-wrap:wrap;
   justify-content:center;
-  margin-top:18px;
+  gap:12px;
+  margin-top:14px;
 }
 
-.contact-box a {
-  padding:12px 20px;
-  border-radius:999px;
-  font-weight:700;
-}
-
-/* ======================================================
+/* ================================
    FOOTER
-====================================================== */
+================================ */
 footer {
   background:var(--brand);
   color:#eaf4ff;
   text-align:center;
-  padding:28px 18px;
+  padding:26px 18px;
   margin-top:40px;
   font-size:13px;
 }
 
-/* ======================================================
+/* ================================
    FLOATING WHATSAPP BUTTON
-====================================================== */
+================================ */
 .floating-wa {
   position:fixed;
   right:20px;
   bottom:20px;
-  width:58px;
-  height:58px;
+  width:56px;
+  height:56px;
   background:#25D366;
   border-radius:50%;
   box-shadow:0 6px 14px rgba(0,0,0,.25);
@@ -306,40 +317,37 @@ footer {
   align-items:center;
   z-index:9999;
 }
-
 .floating-wa img {
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
 }
 
-/* ======================================================
-   MOBILE MENU
-====================================================== */
-@media(max-width:768px) {
-
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width:768px) {
   .hamburger { display:block; }
 
   nav {
     display:none;
     flex-direction:column;
-    width:100%;
     position:fixed;
-    top:70px;
+    top:62px;
     left:0;
+    right:0;
     background:var(--nav-overlay);
     backdrop-filter:blur(10px);
-    padding:20px 0;
-    z-index:999;
+    padding:16px 0;
   }
-
   nav.show { display:flex; }
-
   nav a {
-    padding:14px 0;
+    padding:12px 0;
     border-bottom:1px solid rgba(255,255,255,.2);
   }
 
-  .hero h1 {
-    font-size:28px;
+  .hero {
+    margin:16px auto 24px;
+    padding:42px 18px;
   }
+  .hero h1 { font-size:28px; }
 }
