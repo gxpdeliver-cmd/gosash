@@ -1,815 +1,92 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GoSaSh — U.S. Vehicle Export & Logistics</title>
-
-<meta name="description" content="GoSaSh helps overseas buyers source, inspect, transport and prepare vehicles in the U.S. for export. Based in North Carolina and serving Dubai, GCC and beyond.">
-<meta name="keywords" content="GoSaSh, vehicle export, car shipping, auto transport, USA car export, Dubai car import, vehicle inspection, North Carolina logistics">
-<meta name="author" content="GoSaSh">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="GoSaSh — U.S. Vehicle Export & Logistics">
-<meta property="og:description" content="From the U.S. to the World – trusted partner for inspections, transport and export documents.">
-<meta property="og:image" content="og-image.jpg">
-<meta property="og:url" content="https://www.gosash.com/">
-
-<link rel="icon" href="favicon.ico" />
-
-<style>
-:root {
-  --ink:#1a1a1a;
-  --bg:#ffffff;
-  --muted:#f3f6fa;
-  --brand:#0d3c61;         /* deep navy */
-  --accent:#00a7b5;        /* teal */
-  --accent-soft:#e0f6f8;
-  --accent-warm:#ffb25c;   /* soft warm accent for small highlights */
-  --overlay:rgba(0,0,0,.55);
-  --nav-overlay:rgba(13,60,97,.96);
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none;}
-
-/* Header / Nav */
-header{
-  background:var(--brand);
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:50;
-  box-shadow:0 2px 4px rgba(0,0,0,.12);
-}
-.navwrap{
-  max-width:1120px;
-  margin:0 auto;
-  padding:10px 18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-.logo-group{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.logo-group img{
-  height:44px;
-  background:#fff;
-  border-radius:999px;
-  padding:4px 6px;
-  box-shadow:0 0 10px rgba(255,255,255,.7);
-}
-.logo-text{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-}
-.logo-text span:first-child{
-  font-weight:800;
-  letter-spacing:.06em;
-  font-size:13px;
-  text-transform:uppercase;
-}
-.logo-text span:last-child{
-  font-size:11px;
-  opacity:.9;
-}
-
-/* live ticker */
-.livefeed{
-  background:rgba(0,0,0,.12);
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:600;
-  color:#e9f5ff;
-  min-width:220px;
-  max-width:260px;
-  overflow:hidden;
-  white-space:nowrap;
-  position:relative;
-}
-.livefeed span{
-  display:inline-block;
-  padding-left:100%;
-  animation:scrollFeed 16s linear infinite;
-}
-@keyframes scrollFeed{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-100%);}
-}
-
-nav{
-  display:flex;
-  gap:16px;
-  font-size:14px;
-  font-weight:600;
-}
-nav a{
-  color:#eaf4ff;
-  cursor:pointer;
-  position:relative;
-  padding-bottom:2px;
-}
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:2px;
-  background:var(--accent);
-  transition:width .25s ease;
-}
-nav a:hover::after{
-  width:100%;
-}
-
-.hamburger{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-  color:#fff;
-}
-
-/* Sections baseline */
-section{
-  display:none;
-  padding:60px 20px;
-  max-width:1120px;
-  margin:0 auto;
-  opacity:0;
-  transition:opacity .7s ease;
-}
-section.active{
-  display:block;
-  opacity:1;
-}
-h2{
-  margin:0 0 10px;
-  text-align:center;
-  font-size:26px;
-}
-
-/* Hero */
-.hero-wrapper{
-  max-width:1120px;
-  margin:0 auto;
-  padding:70px 20px 56px;
-}
-.hero{
-  position:relative;
-  background:
-    linear-gradient(135deg,rgba(13,60,97,.92),rgba(0,167,181,.88)),
-    url('hero.jpg') center/cover no-repeat;
-  color:#fff;
-  border-radius:20px;
-  padding:46px 26px 32px;
-  overflow:hidden;
-}
-.hero-inner{
-  max-width:560px;
-  position:relative;
-  z-index:2;
-}
-.hero h1{
-  font-size:34px;
-  line-height:1.2;
-  margin:0 0 10px;
-}
-.hero .subtitle{
-  font-size:16px;
-  color:#eaf6ff;
-  margin:0 0 16px;
-}
-.hero-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:18px;
-}
-.badge{
-  background:rgba(0,0,0,.18);
-  border-radius:999px;
-  padding:6px 11px;
-  font-size:12px;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
-.badge span.emoji{font-size:15px;}
-.hero-cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:16px;
-}
-.btn{
-  padding:12px 20px;
-  border:none;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:all .25s ease;
-}
-.btn-primary{
-  background:#ffffff;
-  color:var(--brand);
-}
-.btn-primary span{
-  color:var(--accent);
-}
-.btn-secondary{
-  background:rgba(0,0,0,.18);
-  color:#f5fbff;
-}
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
-}
-.hero-note{
-  font-size:12px;
-  opacity:.9;
-}
-.hero-visual{
-  position:absolute;
-  right:-40px;
-  bottom:-40px;
-  width:330px;
-  height:330px;
-  background:
-    radial-gradient(circle at 0 0,#ffffff33,transparent 60%),
-    radial-gradient(circle at 100% 0,#00a7b549,transparent 60%);
-  opacity:.8;
-}
-.hero-visual img{
-  position:absolute;
-  inset:18% 9% auto auto;
-  max-width:75%;
-  border-radius:16px;
-  box-shadow:0 18px 40px rgba(0,0,0,.55);
-}
-
-/* Section intro text */
-.section-intro{
-  max-width:680px;
-  margin:0 auto 26px;
-  text-align:center;
-  font-size:14px;
-  color:#4a5563;
-}
-
-/* Grids & cards */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-}
-.card{
-  background:#fff;
-  padding:20px 18px;
-  border-radius:16px;
-  box-shadow:0 3px 8px rgba(15,23,42,.08);
-  text-align:left;
-  position:relative;
-  overflow:hidden;
-  border:1px solid #e4edf5;
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(0,167,181,.07),transparent);
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .25s ease;
-}
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 22px rgba(15,23,42,.12);
-  border-color:#c2e7ee;
-}
-.card:hover::before{
-  opacity:1;
-}
-.card img{
-  height:52px;
-  margin-bottom:10px;
-}
-.card h3{
-  margin:4px 0 6px;
-  font-size:17px;
-}
-.card p{
-  margin:0;
-  font-size:14px;
-  color:#4b5563;
-}
-
-/* How it works timeline style */
-.steps{
-  counter-reset:step;
-}
-.step-card{
-  position:relative;
-  padding-left:40px;
-}
-.step-card::before{
-  counter-increment:step;
-  content:counter(step);
-  position:absolute;
-  left:10px;
-  top:18px;
-  width:22px;
-  height:22px;
-  border-radius:999px;
-  background:var(--accent);
-  color:#fff;
-  font-size:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 0 4px var(--accent-soft);
-}
-
-/* Forms */
-.form-card{
-  background:#fff;
-  padding:24px 20px;
-  border-radius:18px;
-  box-shadow:0 4px 14px rgba(15,23,42,.08);
-  margin-top:10px;
-  border:1px solid #e4edf5;
-}
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px 18px;
-}
-label{
-  font-weight:600;
-  font-size:13px;
-  display:block;
-  margin:0 0 4px;
-}
-input,textarea{
-  width:100%;
-  padding:10px 11px;
-  border-radius:10px;
-  border:1px solid #d7dee7;
-  font:inherit;
-}
-input:focus,textarea:focus{
-  outline:2px solid var(--accent-soft);
-  border-color:var(--accent);
-}
-textarea{
-  min-height:110px;
-  resize:vertical;
-}
-.btn.brand{
-  background:var(--accent);
-  color:#fff;
-}
-
-/* Contact section */
-#contact{
-  background:var(--muted);
-  border-radius:26px;
-  margin-top:40px;
-  padding:46px 26px;
-  position:relative;
-}
-#contact .content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  max-width:760px;
-  margin:auto;
-}
-#contact p{
-  font-size:14px;
-  line-height:1.7;
-  color:#374151;
-}
-#contact .cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  justify-content:center;
-  margin-top:16px;
-}
-#contact .cta a{
-  padding:11px 18px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:13px;
-}
-#contact .cta .email{background:var(--brand);color:#fff;}
-#contact .cta .wa{background:#25D366;color:#fff;}
-#contact .meta{
-  margin-top:10px;
-  font-size:12px;
-  color:#4b5563;
-}
-#contact::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:42%;
-  height:100%;
-  background:url('logo.png') right 26px bottom 24px/260px auto no-repeat;
-  opacity:.05;
-  pointer-events:none;
-}
-
-/* Footer */
-footer{
-  text-align:center;
-  padding:26px 16px 28px;
-  background:var(--brand);
-  color:#e5f1ff;
-  margin-top:50px;
-  font-size:12px;
-}
-
-/* Popup */
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:var(--overlay);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  z-index:1000;
-}
-.modal-overlay.show{
-  display:flex;
-}
-.modal{
-  background:#fff;
-  width:min(520px,96vw);
-  border-radius:20px;
-  box-shadow:0 18px 40px rgba(0,0,0,.45);
-  padding:26px 22px 22px;
-  text-align:center;
-}
-.modal .icon{
-  font-size:40px;
-  width:64px;
-  height:64px;
-  line-height:64px;
-  border-radius:50%;
-  margin:0 auto 12px;
-  background:#e0f6f0;
-  border:2px solid #c0eadf;
-  color:#16a34a;
-}
-.modal h3{
-  margin:4px 0 4px;
-}
-.modal p{
-  margin:3px 0;
-  font-size:13px;
-}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero{
-    padding:40px 18px 26px;
-  }
-  .hero-visual{
-    opacity:.2;
-    right:-80px;
-  }
-  .hero-visual img{
-    display:none;
-  }
-}
-@media(max-width:768px){
-  .hamburger{display:block;}
-  nav{
-    display:none;
-    flex-direction:column;
-    text-align:center;
-    position:fixed;
-    top:60px;
-    left:0;
-    right:0;
-    backdrop-filter:blur(10px);
-    background:var(--nav-overlay);
-    padding:10px 0 18px;
-    z-index:60;
-  }
-  nav.show{display:flex;}
-  nav a{
-    padding:10px 0;
-    border-top:1px solid rgba(255,255,255,.18);
-  }
-  .logo-group{
-    flex:1 0 100%;
-    justify-content:space-between;
-  }
-  .livefeed{
-    max-width:none;
-    width:100%;
-    margin-top:6px;
-    text-align:center;
-  }
-}
-@media(max-width:520px){
-  .hero h1{
-    font-size:26px;
-  }
-  .hero-badges{
-    flex-direction:column;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <title>GoSaSh — U.S. Vehicle Export & Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
   <div class="navwrap">
     <div class="logo-group">
-      <img src="logo.png" alt="GoSaSh logo">
+      <img src="logo.png">
       <div class="logo-text">
         <span>GOSASH LOGISTICS</span>
-        <span>U.S. Vehicle Sourcing · Export Support</span>
-      </div>
-      <div class="livefeed" id="livefeed">
-        <span>🚗 New booking: NC → Port of Houston · Export to Jebel Ali</span>
+        <span>U.S. Vehicle Export · Inspection · Transport</span>
       </div>
     </div>
 
     <nav id="navbar">
-      <a onclick="showSection('hero-section')">Home</a>
-      <a onclick="showSection('services')">Services</a>
-      <a onclick="showSection('process')">How It Works</a>
-      <a onclick="showSection('found')">I Found a Vehicle</a>
-      <a onclick="showSection('request')">Find Me a Vehicle</a>
-      <a onclick="showSection('contact')">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="inspections.html">Inspection</a>
+      <a href="transport.html">Transport</a>
+      <a href="export.html">Export Docs</a>
+      <a href="request.html">Find Vehicle</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<!-- HERO WRAPPER OUTSIDE "section" SO IT'S ALWAYS FIRST -->
-<div class="hero-wrapper section-block active" id="hero-section">
-  <div class="hero">
-    <div class="hero-inner">
-      <h1>U.S. Vehicle Export, Made Simple.</h1>
-      <p class="subtitle">
-        GoSaSh helps overseas buyers and dealers inspect, collect, and prepare vehicles in the U.S. for export to Dubai, GCC, Africa and beyond.
-      </p>
+<div class="hero">
+  <h1>U.S. Vehicle Export, Made Simple.</h1>
 
-      <div class="hero-badges">
-        <div class="badge"><span class="emoji">🇺🇸</span><span>Based in North Carolina, USA</span></div>
-        <div class="badge"><span class="emoji">🚢</span><span>Port-ready documentation & title checks</span></div>
-        <div class="badge"><span class="emoji">📲</span><span>WhatsApp updates from pickup to port</span></div>
-      </div>
+  <p class="subtitle">
+    From inspection to port delivery — GoSaSh handles your U.S. vehicle export process.
+  </p>
 
-      <div class="hero-cta">
-        <button class="btn btn-primary" onclick="showSection('found')">
-          Request Inspection <span>→</span>
-        </button>
-        <button class="btn btn-secondary" onclick="showSection('request')">
-          I Need Help Finding a Vehicle
-        </button>
-      </div>
+  <div class="hero-badges">
+    <div class="badge">🇺🇸 Based in North Carolina</div>
+    <div class="badge">🚢 Export-ready title & documentation checks</div>
+    <div class="badge">📲 WhatsApp updates during every step</div>
+  </div>
 
-      <div class="hero-note">
-        Serving buyers, dealers and exporters in Dubai, Sharjah, Qatar, Oman, and East & West Africa.
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <img src="ship.png" alt="Vehicle shipping illustration">
-    </div>
+  <div class="hero-buttons">
+    <a class="btn btn-primary" href="inspections.html">Request Inspection</a>
+    <a class="btn btn-secondary" href="request.html">Find Me a Vehicle</a>
   </div>
 </div>
 
-<section id="services" class="active">
-  <h2>What GoSaSh Can Handle for You</h2>
-  <p class="section-intro">
-    Whether you already bought a vehicle or are still searching, GoSaSh acts as your eyes and hands in the U.S. –
-    from inspection and collection to export-ready paperwork.
-  </p>
+<section>
+  <h2>Our Services</h2>
+  <p class="section-intro">Everything you need to buy and export a car from the United States.</p>
+
   <div class="grid">
     <div class="card">
-      <img src="inspection.png" alt="Inspection icon">
-      <h3>Pre-Purchase & Pre-Export Inspection</h3>
-      <p>
-        Detailed photos, walk-around videos and condition notes so you know exactly what you are buying – before committing to payment or shipping.
-      </p>
+      <img src="inspection.png">
+      <h3>Vehicle Inspection</h3>
+      <p>Full photos, videos and condition reporting before you buy or ship.</p>
     </div>
+
     <div class="card">
-      <img src="tow.png" alt="Tow icon">
+      <img src="tow.png">
       <h3>Local & Interstate Transport</h3>
-      <p>
-        Pickup from dealers, auctions or private sellers using vetted carriers. We coordinate loading, timing and communication with all parties.
-      </p>
+      <p>Dealer pickup, auction collection and transport to port.</p>
     </div>
+
     <div class="card">
-      <img src="document.png" alt="Documents icon">
-      <h3>Title & Export Documentation Prep</h3>
-      <p>
-        We help ensure titles, bills of sale and IDs are in order for export and coordinate with port/export offices as needed for clearance.
-      </p>
+      <img src="document.png">
+      <h3>Export Documents</h3>
+      <p>Title verification, Bill of Sale, and port requirements guidance.</p>
     </div>
+
     <div class="card">
-      <img src="ship.png" alt="Ship icon">
-      <h3>Hand-Off to Your Forwarder</h3>
-      <p>
-        You choose the ocean carrier or freight forwarder; we deliver the vehicle to the port or their yard with the correct paperwork in hand.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <h2>How the GoSaSh Process Works</h2>
-  <p class="section-intro">
-    A clear, step-by-step path from “I found a car online” to “vehicle delivered to port and ready for loading”.
-  </p>
-  <div class="grid steps">
-    <div class="card step-card">
-      <h3>Share the Vehicle or Requirements</h3>
-      <p>Send us the advert link or tell us what kind of vehicle you need, budget and destination port.</p>
-    </div>
-    <div class="card step-card">
-      <h3>Inspection & Deal Confirmation</h3>
-      <p>We inspect the vehicle, send you visuals and notes, and you decide whether to proceed, negotiate or walk away.</p>
-    </div>
-    <div class="card step-card">
-      <h3>Pickup & Transport to Port</h3>
-      <p>GoSaSh arranges carriers, coordinates with the seller or dealer and keeps you updated via WhatsApp.</p>
-    </div>
-    <div class="card step-card">
-      <h3>Title Check & Export Documents</h3>
-      <p>We verify titles and documents needed for export, assist with port/export office requirements and confirm hand-off to your freight partner.</p>
-    </div>
-  </div>
-</section>
-
-<section id="found">
-  <h2>I Already Found a Vehicle</h2>
-  <p class="section-intro">
-    Share the vehicle details and location. We’ll quote inspection, transport and documentation support so you can move quickly but safely.
-  </p>
-  <div class="form-card">
-    <form name="Found Vehicle" method="POST" action="mailto:gxpdeliver@gmail.com" enctype="text/plain">
-      <div class="form-grid">
-        <div>
-          <label>Your Name</label>
-          <input name="name" required>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" name="email" required>
-        </div>
-        <div>
-          <label>WhatsApp / Phone</label>
-          <input name="phone">
-        </div>
-        <div>
-          <label>Destination Country / Port</label>
-          <input name="destination">
-        </div>
-        <div style="grid-column:1/-1;">
-          <label>Vehicle Link or Address</label>
-          <input name="vehicle_address" placeholder="Auction / dealer advert link or physical address" required>
-        </div>
-        <div>
-          <label>Year / Make / Model</label>
-          <input name="ymm">
-        </div>
-        <div>
-          <label>Advert Price (USD)</label>
-          <input name="price">
-        </div>
-        <div>
-          <label>Running / Non-running?</label>
-          <input name="condition" placeholder="Running, non-running, salvage, etc.">
-        </div>
-        <div style="grid-column:1/-1;">
-          <label>Notes or Special Instructions</label>
-          <textarea name="notes" placeholder="Timing, auction date, who will book ocean freight, etc."></textarea>
-        </div>
-      </div>
-      <br>
-      <button class="btn brand" type="submit">Send Vehicle Details</button>
-    </form>
-  </div>
-</section>
-
-<section id="request">
-  <h2>Help Me Find a Vehicle</h2>
-  <p class="section-intro">
-    Want a specific truck, SUV or sedan from the U.S. but don’t know where to start? Tell us what you need and we’ll help you search.
-  </p>
-  <div class="form-card">
-    <form name="Find Vehicle" method="POST" action="mailto:gxpdeliver@gmail.com" enctype="text/plain">
-      <div class="form-grid">
-        <div>
-          <label>Your Name</label>
-          <input name="name" required>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" name="email" required>
-        </div>
-        <div>
-          <label>WhatsApp / Phone</label>
-          <input name="phone">
-        </div>
-        <div>
-          <label>Destination Country / Port</label>
-          <input name="destination">
-        </div>
-        <div style="grid-column:1/-1;">
-          <label>Target Vehicle Type</label>
-          <input name="target" placeholder="Example: 2021–2023 F-150 Lariat, Range Rover Velar, Honda Fit, etc.">
-        </div>
-        <div>
-          <label>Budget (USD)</label>
-          <input name="budget">
-        </div>
-        <div>
-          <label>Timeline</label>
-          <input name="timeline" placeholder="How soon do you need the vehicle?">
-        </div>
-        <div style="grid-column:1/-1;">
-          <label>Notes</label>
-          <textarea name="notes" placeholder="Preferred mileage, color, options, salvage/clean title, etc."></textarea>
-        </div>
-      </div>
-      <br>
-      <button class="btn brand" type="submit">Submit Vehicle Request</button>
-    </form>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="content">
-    <h2>Contact GoSaSh</h2>
-    <p>
-      GoSaSh is a U.S.-based vehicle logistics partner helping overseas buyers, dealers and exporters with inspection, transport
-      and export-ready paperwork for vehicles purchased anywhere in the United States.
-    </p>
-    <div class="cta">
-      <a class="email" href="mailto:gxpdeliver@gmail.com">Email GoSaSh</a>
-      <a class="wa" href="https://wa.me/13369911284?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20vehicle%20for%20export." target="_blank">WhatsApp Chat</a>
-    </div>
-    <div class="meta">
-      Based in High Point, North Carolina · Serving buyers in Dubai, GCC, Africa and beyond.
+      <img src="ship.png">
+      <h3>Port Delivery</h3>
+      <p>We deliver your vehicle to your freight forwarder or port terminal.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 GoSaSh Logistics · U.S. Vehicle Sourcing & Export Support
+  © 2025 GoSaSh Logistics – U.S. Vehicle Export Support
 </footer>
 
-<!-- Simple popup (you can wire it later to forms if you use a form service) -->
-<div id="popup" class="modal-overlay">
-  <div class="modal">
-    <div class="icon">✓</div>
-    <h3>Thank you! Your message is ready to send.</h3>
-    <p>You can review and send the email from your email app.</p>
-    <p>شکریہ! آپ کی تفصیل ای میل میں تیار ہو گئی ہے۔</p>
-    <p>شكراً لك! تم إعداد تفاصيلك في البريد.</p>
-  </div>
-</div>
-
-<script>
-function showSection(id){
-  // show hero wrapper separately
-  const hero = document.getElementById('hero-section');
-  const allSections = document.querySelectorAll('section');
-  hero.classList.remove('active');
-  allSections.forEach(s=>{s.classList.remove('active'); s.style.opacity='0';});
-
-  if(id === 'hero-section'){
-    hero.classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }else{
-    const el = document.getElementById(id);
-    if(
+<script src="script.js"></script>
+</body>
+</html>
